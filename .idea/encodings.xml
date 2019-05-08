@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$/spring-boot-10-bill" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-11-task" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-12-mail" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-13-cache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-14-final" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-15-final" charset="UTF-8" />
+  </component>
+</project>

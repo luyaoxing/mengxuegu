@@ -1,0 +1,113 @@
+*, *:before, *:after{
+				box-sizing: border-box;
+			}
+			
+			html {
+				font-size: 18px;
+				line-height: 1.5;
+				font-weight: 300;
+				color: #333;
+			}
+			
+			body{
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				background-color: #E7EAED;
+				background-attachment: fixed;
+				/* 固定图像 */
+			}
+.heading{
+				width: 100%;
+				font-weight: 900;
+				/* 字体粗细 */
+			}
+.container{
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	/* 元素周围留空白 */
+	align-items: center;
+	flex-wrap: wrap;
+	/* 让弹性盒有必要的时候拆行 */
+}
+
+
+
+.sonyVideo{
+            width: 100%;
+            height: 100%;
+        }
+		
+.section-li{
+	width: 110px;
+}
+
+.section-li a{
+	background-color: black;
+    -webkit-transition-duration: 0.3s;
+    color: #EEEEEE;
+	
+}
+.section-li a:hover {
+	-webkit-transition-duration: 0.3s;
+	transform: translateY(10px);
+	-webkit-transition-timing-function: ease;
+	color: black;
+}
+.user{
+	width: 200px;
+	height: 20px;
+	position: absolute;
+	margin-left: 90%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#author {
+	float: right;
+	border-bottom: none;
+}
+
+#logo {
+	float: left;
+	border-bottom: none;
+	color: #409EFF;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#author > img {
+	border: 1px solid #eee;
+	border-radius: 100%;
+	box-sizing: border-box;
+	height: 30px;
+	margin: 0 8px 0 10px;
+	padding: 2px;
+	width: 30px;
+}
+
+#author .el-dropdown {
+	display: inline-block;
+	position: relative;
+	color: #606266;
+	font-size: 14px;
+}
+
+.footer {
+	border-top: solid 1px #e6e6e6;
+	margin-top: 50px;
+}
+
+.footer .footer-inner {
+	margin-top: 10px;
+	color: rgb(153, 153, 153);
+	margin-bottom: 25px;
+}
+
+.footer .footer-inner .copyright {
+	margin-bottom: 3px;
+}
+

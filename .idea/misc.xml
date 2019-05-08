@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
+    </list>
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring-boot-10-bill/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-11-task/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-12-mail/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-13-cache/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-14-final/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-15-final/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,207 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #333;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #E7EAED;
+    background-attachment: fixed;
+    /* 固定图像 */
+}
+
+.content{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    /* 元素周围留空白 */
+    align-items: center;
+    flex-wrap: wrap;
+    /* 让弹性盒有必要的时候拆行 */
+    max-width: 1000px;
+}
+
+.heading{
+    width: 100%;
+    font-weight: 900;
+    /* 字体粗细 */
+}
+
+.card{
+    color: inherit;
+    /* 继承的英文 inherit */
+    cursor: pointer;
+    /* 光标指针 */
+    /*width: calc(100% - 1rem);*/
+    width: 20em;
+    /* 计算，中间的是计算符号 */
+    /*min-width: calc(33% - 2rem);*/
+    height: 400px;
+    min-height: 400px;
+    /* 透视 */
+    margin: 1rem;
+    position: relative;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+/* @media screen and (max-width: 800px) {
+.card {
+width: calc(50% - 2rem);
+}
+}
+@media screen and (max-width: 500px) {
+.card {
+width: 100%;
+}
+} */
+/* 低于多少或者高于多少执行 */
+.front{
+    /* display: flex; */
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    background: #FFFFFF;
+    /* 图片铺满，比例不变 */
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* 隐藏被旋转的div的背面 */
+    transform-style: preserve-3d;
+    transition: ease-in-out 1100ms;
+    /* perspective: 1000px; */
+    /* transform: ease-in-out 600ms; */
+}
+
+.under{
+    transform: translateZ(40px);
+    width: inherit;
+    height: 1.2rem;
+    margin-bottom: 1px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+}
+/*.front, */
+.back{
+    display: flex;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    /* 图片铺满，比例不变 */
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* 隐藏被旋转的div的背面 */
+    transform-style: preserve-3d;
+    transition: ease-in-out 1100ms;
+    /* perspective: 1000px; */
+    /* transform: ease-in-out 600ms; */
+}
+
+/* .front:before{
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    opacity: .25;
+    /* 透明度 */
+/* z-index: -1; */
+/* 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面 */
+
+/* } */
+
+.card:hover .front{
+    transform: rotateY(180deg);
+}
+
+.back{
+    background: #FFFFFF;
+    transform: rotateY(-180deg);
+    padding: 6em 2em;
+}
+
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+
+.button{
+    transform: translateZ(40px);
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: .5em 1em;
+    border-radius: 100px;
+    font: inherit;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    border: none;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: 600ms ease-;
+}
+
+.button:before{
+    transition: 600ms ease;
+    position: absolute;
+    display: block;
+    content: '';
+    transform: translateZ(-40px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    border-radius: 100px;
+    left: 10px;
+    top: 16px;
+    box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+    background-color: rgba(26, 87, 230, 0.25);
+}
+
+.button:hover{
+    transform: translateZ(55px);
+}
+.button:hover:before{
+    transform: translateZ(-55px);
+}
+.button:active{
+    transform: translateZ(20px);
+}
+.button:active:before{
+    transform: translateZ(-20px);
+}
+
+.divForm{
+    width: 100%;
+    background-color: black;
+    opacity: .25;
+    height: 2em;
+}

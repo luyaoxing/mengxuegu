@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-12-mail" />
+        <module name="spring-boot-14-final" />
+        <module name="spring-boot-10-bill" />
+        <module name="spring-boot-13-cache" />
+        <module name="spring-boot-11-task" />
+        <module name="spring-boot-15-final" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-boot-10-bill" target="1.8" />
+      <module name="spring-boot-11-task" target="1.8" />
+      <module name="spring-boot-12-mail" target="1.8" />
+      <module name="spring-boot-13-cache" target="1.8" />
+      <module name="spring-boot-14-final" target="1.8" />
+      <module name="spring-boot-15-final" target="1.8" />
+      <module name="spring-boot-highly-concurrent-2" target="1.8" />
+      <module name="spring-boot-highly-concurrent-web-system-1" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-boot-10-bill" options="-parameters" />
+      <module name="spring-boot-11-task" options="-parameters" />
+      <module name="spring-boot-12-mail" options="-parameters" />
+      <module name="spring-boot-13-cache" options="-parameters" />
+      <module name="spring-boot-14-final" options="-parameters" />
+      <module name="spring-boot-15-final" options="-parameters" />
+      <module name="spring-boot-highly-concurrent-2" options="-parameters" />
+      <module name="spring-boot-highly-concurrent-web-system-1" options="-parameters" />
+    </option>
+  </component>
+</project>

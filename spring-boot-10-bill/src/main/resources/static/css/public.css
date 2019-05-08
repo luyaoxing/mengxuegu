@@ -1,0 +1,59 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #333;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* background-color: #ECF0F9; */
+    background-attachment: fixed;
+    /* 固定图像 */
+}
+.heading{
+    width: 100%;
+    font-weight: 900;
+    /* 字体粗细 */
+}
+.container{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    /* 元素周围留空白 */
+    align-items: center;
+    flex-wrap: wrap;
+    /* 让弹性盒有必要的时候拆行 */
+}
+
+#sonyWebm{
+    transform: translateZ(50deg);
+}
+
+.sonyVideo{
+    width: 100%;
+    height: 100%;
+}
+
+.section-li{
+    width: 110px;
+}
+
+.section-li a{
+    background-color: black;
+    -webkit-transition-duration: 0.3s;
+    color: #EEEEEE;
+
+}
+.section-li a:hover {
+    -webkit-transition-duration: 0.3s;
+    transform: translateY(10px);
+    -webkit-transition-timing-function: ease;
+    color: black;
+}

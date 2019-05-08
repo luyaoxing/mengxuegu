@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public.css" />
+
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div th:fragment="header" id="top_header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Cemare商城</a>
+<!--                （已实现订单抢购秒杀的高并发）-->
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container" id="public_header">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="nav-section">
+                <ul class="nav nav-tabs">
+                    <li class="section-li">
+                        <a th:href="@{/toPublic}" href="#">首页</a>
+                    </li>
+                    <li class="section-li">
+                        <a th:href="@{/products}" href="#">商城</a>
+                    </li>
+                    <li class="section-li">
+                        <a th:href="@{/sells}" href="#">抢购现场</a>
+                    </li>
+                    <li class="section-li">
+                        <a th:href="@{/providers}" href="#">供应</a>
+                    </li>
+                    <li class="section-li" th:if="not ${session.loginUser}">
+                        <a th:href="@{/login}" href="#">我</a>
+                    </li>
+                    <li class="section-li" th:if="${session.loginUser} == 'root'">
+                        <a th:href="@{/users}" href="#" th:text="${session.loginUser}">我</a>
+                    </li>
+                    <li class="section-li" th:if="${session.loginUser}">
+                        <a th:href="@{/logout}" href="#">exit</a>
+                    </li>
+                    <li class="section-li" th:if="${session.loginUser} == 'root'">
+                        <a th:href="@{/provider}" th:method="get" href="#">添加供应商</a>
+                    </li>
+                    <li class="section-li" th:if="${session.loginUser} == 'root'">
+                        <a th:href="@{/user}" th:method="get" href="#">添加yonghu</a>
+                    </li>
+                    <li class="section-li" th:if="${session.loginUser} == 'root'">
+                        <a th:href="@{/product}" th:method="get" href="#">添加camera</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column" id="sonyWebm">
+            <video class="sonyVideo" muted="muted" preload="auto" loop="loop" autoplay="autoplay">
+                <source src="../video/sony.webm">
+            </video>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="footer" class="footer">
+    <nav class="text-center">
+        <div class="footer-inner">
+            <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+                <span class="with-love">
+                                    <i class="fa fa-heartbeat"></i>
+                                </span>
+                <span class="author" itemprop="copyrightHolder">Luyao</span>
+            </div>
+            <label>基于Spring Boot实现的抢购秒杀（高并发1/3）的相机商城系统</label>
+        </div>
+    </nav>
+</div>
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

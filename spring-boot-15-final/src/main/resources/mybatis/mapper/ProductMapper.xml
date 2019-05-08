@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finalproject.springboot.mapper.ProductMapper">
+
+    <select id="getProduct" resultType="com.finalproject.springboot.entity.Product">
+        select * from product where 1=1
+        <if test="model != null and model != ''">
+            and model like '%${model}%'
+        </if>
+    </select>
+
+    <select id="getProductByCid" resultType="com.finalproject.springboot.entity.Product">
+        select * from product where cid = #{cid}
+    </select>
+
+    <insert id="addProduct">
+        INSERT INTO `product`
+        (`product_code`, `provider_name`,
+        `model`, `price`, `sensor`, `pixel`,
+        `address`, `antiShakeMechanism`, `manipulationMode`,
+        `photo`, `create_date`, `stock`)
+        VALUES
+        (#{productCode},#{providerName},#{model},
+        #{price},#{sensor},#{pixel},#{address},
+        #{antiShakeMechanism},#{manipulationMode},#{photo},now(),#{stock})
+    </insert>
+
+    <update id="updateProduct">
+        UPDATE `product`
+        SET `product_code`=#{productCode}, `provider_name`=#{providerName}, `model`=#{model},
+        `price`=#{price}, `sensor`=#{sensor}, `pixel`=#{pixel}, `address`=#{address},
+        `antiShakeMechanism`=#{antiShakeMechanism},`manipulationMode`=#{manipulationMode},
+        `photo`=#{photo},
+        `create_date`=now(),`stock`=#{stock}
+        WHERE (`cid`=#{cid});
+
+    </update>
+
+    <delete id="deleteProductByCid">
+        delete from product where cid = #{cid}
+    </delete>
+
+</mapper>

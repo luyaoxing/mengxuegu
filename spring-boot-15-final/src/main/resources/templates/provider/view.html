@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/list.css"/>
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/product/list.css">
+
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="topHeader" th:replace="main/public :: #top_header"></div>
+<h5>当前位置：主页 》所有供应商 》供应商详细信息</h5>
+<div id="publicHeader" th:replace="main/public :: #public_header"></div>
+
+<div class="container" style="margin-top: 30px">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <img style="width: 240px; height: 200px" alt="240x200" th:src="'../img/' + ${provider.photo}" />
+        </div>
+        <div class="col-md-4 column">
+            <dl>
+                <h4>
+                    民间故事 - 歌曲选自贝多芬、布里顿、马勒.
+                </h4>
+                <dd style="margin-bottom: 20px">
+                    Cora Burggraaf
+                </dd>
+                <div class="albumFormat">
+                    <img style="width: 24px; height: 24px" src="../img/logo/hires.jpg"> <span id="hiRes"> Hi-Res | </span><span>DSD64 | </span><span>2.8MHz/1bit</span>
+                </div>
+<!--                <a th:href="@{/provider/} + ${p.pid} + '?type=update'">-->
+<!--                </a>-->
+<!--                <div class="albumFormat" style="margin-top: 10px">-->
+<!--                    <button th:href="@{/provider/} + ${provider.pid}" class="btn btn-default">修改信息</button>-->
+<!--                </div>-->
+            </dl>
+        </div>
+        <div class="col-md-4 column">
+            <dl style="margin-top: 20px">
+                <form id="updateForm" action="#" th:action="@{/provider}" th:method="post">
+                    <input th:type="hidden" name="_method" value="put">
+                    <input th:type="hidden" name="pid" th:value="${provider.pid}">
+<!--                    <input th:type="hidden" name="providerCode" th:value="${provider.providerCode}">-->
+                <dt th:text="'供应商编码：' + ${provider.providerCode}" th:if="${session.loginUser} == 'root'">
+                    供应商编码：
+                </dt>
+                        <input th:value="${provider.providerCode}" type="username" class="form-control" name="providerCode" th:if="${session.loginUser} == 'root'"/>
+                <dt th:text="'供应商名称：' + ${provider.providerName}" style="margin-top: 10px">
+                    供应商名称：
+                </dt>
+                    <input th:value="${provider.providerName}" type="username" class="form-control" name="providerName" th:if="${session.loginUser} == 'root'"/>
+                <dt th:text="'联系人：' + ${provider.people}" style="margin-top: 10px">
+                    联系人：
+                </dt>
+                    <input th:value="${provider.people}" type="username" class="form-control" name="people" th:if="${session.loginUser} == 'root'"/>
+                <dt th:text="'联系电话：' + ${provider.phone}" style="margin-top: 10px">
+                    联系电话：
+                </dt>
+                    <input th:value="${provider.phone}" type="username" class="form-control" name="phone" th:if="${session.loginUser} == 'root'"/>
+                <dd th:text="'联系地址：' + ${provider.address}" style="margin-top: 10px">
+                    联系地址：
+                </dd>
+                    <input th:value="${provider.address}" type="username" class="form-control" name="address" th:if="${session.loginUser} == 'root'"/>
+                <dd th:text="'传真：' + ${provider.fax}" style="margin-top: 10px">
+                    传真：
+                </dd>
+                    <input th:value="${provider.fax}" type="username" class="form-control" name="fax" th:if="${session.loginUser} == 'root'"/>
+                <dt th:text="'描述：' + ${provider.describe}" style="margin-top: 10px">
+                    描述：
+                </dt>
+                    <input th:value="${provider.describe}" type="username" class="form-control" name="describe" th:if="${session.loginUser} == 'root'"/>
+                <dt th:text="'创建时间：' + ${provider.createDate}" style="margin-top: 10px">
+                    创建时间：
+                </dt>
+<!--                    <input type="username" class="form-control" id="inputEmail3" name="createDate"/>-->
+                <dt th:text="'供应商logo：' + ${provider.photo}" style="margin-top: 10px">
+                    供应商logo：
+                </dt>
+                    <input th:value="${provider.photo}" type="username" class="form-control" name="photo" th:if="${session.loginUser} == 'root'"/>
+                    <input type="submit" class="btn btn-default" th:if="${session.loginUser} == 'root'">确定提交</input>
+                </form>
+                <dd>
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                </dd>
+                <a th:attr="del_uri=@{/provider/} + ${provider.pid}" href="#" class="delete"></a>
+                <hr />
+            </dl>
+        </div>
+    </div>
+    <div class="row clearfix" style="margin-top: 2px">
+        <div class="col-md-8 column">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">简介</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">信息</a>
+                </li>
+                <li class="dropdown pull-right">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">操作</a>
+                        </li>
+                        <li>
+                            <a href="#">设置栏目</a>
+                        </li>
+                        <li>
+                            <a href="#">更多设置</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">分割线</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <hr/>
+            <span th:text="'描述：' + ${provider.describe}">民歌的本质是形式上的简朴，这张唱片广泛的挑选了原创和改编的民歌，并以一种巧妙而率直的方式呈现。
+
+——《Sunday Times》, 2013年2月</span>
+        </div>
+        <div class="col-md-4 column">
+            <div class="media">
+                <a href="#" class="pull-left"><img src="v3/default7.jpg" class="media-object" alt='' /></a>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        Nested media heading
+                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    <div class="media">
+                        <a href="#" class="pull-left"><img src="v3/default8.jpg" class="media-object" alt='' /></a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                Nested media heading
+                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="zhezhao" th:if="${session.loginUser} == 'root'">
+<form method="post" id="deleteForm">
+    <input type="hidden" name="_method" value="delete">
+    <div class="remove" id="removeProv">
+        <div class="removerChid">
+            <h2>提示</h2>
+            <div class="removeMain" >
+                <p>你确定要删除吗？</p>
+                <a href="#" id="yes">确定</a>
+                <a href="#" id="no">取消</a>
+            </div>2
+        </div>
+    </div>
+</form>
+</div>
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.min.js"></script>
+<script th:src="@{/js/del.js}"></script>
+</body>
+</html>

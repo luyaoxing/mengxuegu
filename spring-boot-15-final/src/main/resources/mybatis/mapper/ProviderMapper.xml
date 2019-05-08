@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finalproject.springboot.mapper.ProviderMapper">
+
+    <select id="getProvider" resultType="com.finalproject.springboot.entity.Provider">
+        select * from provider where 1=1
+        <if test="providerName != null and providerName != ''">
+            and providerName like '%${providerName}%'
+        </if>
+    </select>
+
+    <select id="getProviderByPid" resultType="com.finalproject.springboot.entity.Provider">
+        select * from provider where pid = #{pid}
+    </select>
+
+    <insert id="addProvider">
+        INSERT INTO `provider` (`provider_code`, `providerName`, `people`, `phone`, `address`, `fax`, `describe`, `create_date`)
+        VALUES (#{providerCode},#{providerName},#{people},#{phone},#{address},#{fax},#{describe},now())
+    </insert>
+
+    <update id="updateProvider">
+        UPDATE `provider`
+        SET `provider_code`=#{providerCode}, `providerName`=#{providerName}, `people`=#{people},
+        `phone`=#{phone}, `address`=#{address}, `fax`=#{fax}, `describe`=#{describe}, `photo`=#{photo},
+        `create_date`=now()
+        WHERE (`pid`=#{pid});
+
+    </update>
+
+    <delete id="deleteProviderByPid">
+        delete from provider where pid = #{pid}
+    </delete>
+
+</mapper>

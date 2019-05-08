@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<title></title>
+	<script>
+        $(function(){
+            $(but1).on("click",function(){
+                $("img").hide(500) ; //消失
+            }) ;
+            $(but2).on("click",function(){
+                $("img").show(5000) ; //显现
+            }) ;
+            $(but3).on("click",function(){
+                $("img").slideUp(5000) ; //滑动消失
+            }) ;
+            $(but4).on("click",function(){
+                $("img").slideDown(5000) ; //滑动显现
+            }) ;
+            $(but5).on("click",function(){
+                $("img").slideToggle(5000) ; //滑动切换（消失后显现，显现后消失）
+            }) ;
+            $(but6).on("click",function(){
+                $("img").fadeOut(5000) ; //淡出
+            }) ;
+            $(but7).on("click",function(){
+                $("img").fadeIn(5000) ; //淡入
+            }) ;
+            $(but8).on("click",function(){
+                $("img").fadeTo(500,0.5) ; //淡化
+            }) ;
+            $(but9).on("click",function(){
+                $("div").animate({left:"800px"},5000) ; //移动（需要调整对象的style属性中position的值absolute）
+            }) ;
+        }) ;
+	</script>
+</head>
+<body>
+<input type="button" id="but1" value="消失"/>
+<input type="button" id="but2" value="显现"/>
+<input type="button" id="but3" value="滑动消失"/>
+<input type="button" id="but4" value="滑动显现"/>
+<input type="button" id="but5" value="滑动切换"/>
+<input type="button" id="but6" value="淡出"/>
+<input type="button" id="but7" value="淡入"/>
+<input type="button" id="but8" value="淡化"/>
+<input type="button" id="but9" value="移动"/>
+<div style="position: absolute;"><img src="http://demo.jb51.net/js/2018/html5-css3-3d-img-flash-codes/images/sJALsDXak4EehSg2F2y92rt5hPe.jpg" height="200"></div>
+</body>
+</html>

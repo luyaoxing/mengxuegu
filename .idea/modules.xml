@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mengxuegu.iml" filepath="$PROJECT_DIR$/.idea/mengxuegu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-10-bill/spring-boot-10-bill.iml" filepath="$PROJECT_DIR$/spring-boot-10-bill/spring-boot-10-bill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-11-task/spring-boot-11-task.iml" filepath="$PROJECT_DIR$/spring-boot-11-task/spring-boot-11-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-12-mail/spring-boot-12-mail.iml" filepath="$PROJECT_DIR$/spring-boot-12-mail/spring-boot-12-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-13-cache/spring-boot-13-cache.iml" filepath="$PROJECT_DIR$/spring-boot-13-cache/spring-boot-13-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-14-final/spring-boot-14-final.iml" filepath="$PROJECT_DIR$/spring-boot-14-final/spring-boot-14-final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-15-final/spring-boot-15-final.iml" filepath="$PROJECT_DIR$/spring-boot-15-final/spring-boot-15-final.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.div1 {
+			height: 800px;
+			width: 640px;
+			margin: 100px auto;
+		}
+		
+		.div1 ul {
+			list-style: none;
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+		}
+		
+		.div1 ul li {
+			width: 25%;
+			height: 100%;
+			float: left;
+			position: relative;
+			transform-style: preserve-3d;
+			transition: transform 0.5s;
+		}
+		
+		.div1 ul li span {
+			width: 100%;
+			height: 100%;
+			/*float: left;*/
+			position: absolute;
+			transition: transform 0.5s;
+		}
+		
+		.div1 ul li span:nth-child(1) {
+			background-image: url(static/img/1.jpg);
+			transform: translateZ(400px);
+		}
+		
+		.div1 ul li span:nth-child(2) {
+			background-image: url(static/img/2.jpg);
+			transform: translateY(400px) rotateX(90deg);
+			
+		}
+		
+		.div1 ul li span:nth-child(3) {
+			background-image: url(static/img/3.jpg);
+			transform: translateZ(400px) rotateX(180deg);
+			
+		}
+		
+		.div1 ul li span:nth-child(4) {
+			background-image: url(static/img/4.jpg);
+			transform: translateY(400px) rotateX(-90deg);
+		}
+		
+		ul>li:nth-child(2)>span {
+			/* 让第二个span的水平位移为自身宽度的，可以显示出下一个区域 */
+			background-position: -100% 0;
+		}
+		
+		ul>li:nth-child(3)>span {
+			background-position: -200% 0;
+		}
+		
+		ul>li:nth-child(4)>span {
+			background-position: -300% 0;
+		}
+	</style>
+</head>
+
+<body>
+
+<div class="div1">
+	<ul>
+		<li><span></span> <span></span> <span></span> <span></span></li>
+		<li><span></span> <span></span> <span></span> <span></span></li>
+		<li><span></span> <span></span> <span></span> <span></span></li>
+		<li><span></span> <span></span> <span></span> <span></span></li>
+	</ul>
+</div>
+<button onclick="a()">反点击</button>
+<button onclick="b()">正点击</button>
+<script>
+
+    // 创建图片的索引
+    var index = 0;
+    // 添加一个static，放置多次点击
+    var flag = true;
+    function a() {
+        if(flag){
+            flag = false;
+            index++;
+            //获取所有li对象
+            var li = document.getElementsByTagName("li");
+            // 通过循环迭代所有li对象，添加新的样式内容
+            for(var i = 0;i<li.length;i++){
+                console.log(li)
+                li[i].style.transform = "rotateX("+(index*90)+"deg)";
+                li[i].style.transitionDelay = (i*0.2)+"s";
+            }
+            // 计时器，通过这个延迟1秒后让阀门变回true
+            setTimeout(function(){
+                flag = true;
+            },10);
+
+        }
+
+
+    }
+    function b() {
+        if(flag){
+            flag = false;
+            index--;
+            //获取所有li对象
+            var li = document.getElementsByTagName("li");
+            // 通过循环迭代所有li对象，添加新的样式内容
+            for(var i = 0;i<li.length;i++){
+                console.log(li)
+                li[i].style.transform = "rotateX("+(index*90)+"deg)";
+                li[i].style.transitionDelay = (i*0.2)+"s";
+            }
+            // 计时器，通过这个延迟1秒后让阀门变回true
+            setTimeout(function(){
+                flag = true;
+            },10);
+
+        }
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
